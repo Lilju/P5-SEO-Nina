@@ -11,10 +11,48 @@
 	<meta charset="UTF-8">
 	<meta name="robots" content="index, follow">
 	<meta name="description" content="Site de Nina Carducci, photographe professionnelle.">
-	<script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
+	<script src="./assets/bootstrap/bootstrap.bundle.min.js" defer></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script src="./assets/maugallery.min.js" defer></script>
 	<script src="./assets/scripts.min.js" defer></script>
+	<!--Schema.org-->
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": ["LocalBusiness", "PhotographyStudio"],
+			"name": "Nina Carducci",
+			"jobTitle": "Photographe",
+			"description": "Nina Carducci, Photographe professionnelle à Bordeaux",
+			"image": "https://lilju.github.io/P5-SEO-Nina/assets/images/nina.webp",
+			"url": "https://lilju.github.io/P5-SEO-Nina/",
+			"telephone": "0556677889",
+			"adress": {
+				"@type": "PostalAddress",
+				"streetAddress": "68 avenue Alsace-Lorraine",
+				"addressLocality": "Bordeaux",
+				"postalCode": "33200",
+				"addressCountry": "France"
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": "44.837778",
+				"longitude": "-0.579444"
+			},
+			"openingHoursSpecification": {
+				"@type": "OpeningHoursSpecification",
+				"dayOfWeek": [
+					"lundi",
+					"mardi",
+					"mercredi",
+					"jeudi",
+					"vendredi",
+				],
+				"opens": "10:00",
+				"closes": "19:00"
+			},
+			"priceRange": "50€ - 400€"
+		}
+	</script>
 </head>
 <body>
 <header class="top-header">
@@ -30,7 +68,6 @@
 	</nav>
 </header>
 <div id="header">
-
 	<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 		<div class="carousel-indicators">
 			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -75,7 +112,7 @@
 		<div class="gallery" style="display: none">
 			<img data-gallery-tag="Concert" class="gallery-item"  alt="Concert1" loading="lazy" width="1224" height="1632" src="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash.webp">
 			<img data-gallery-tag="Entreprises" class="gallery-item" alt="Entreprise1" loading="lazy" width="1333" height="2000" src="./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash.webp">
-			<img data-gallery-tag="Entreprises" class="gallery-item" alt="Entreprise1" loading="lazy" width="1361" height="921" src="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash.webp">
+			<img data-gallery-tag="Entreprises" class="gallery-item" alt="Entreprise2" loading="lazy" width="1361" height="921" src="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash.webp">
 			<img data-gallery-tag="Mariages" class="gallery-item" alt="Mariage1" loading="lazy" width="1113" height="891" src="./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash.webp">
 			<img data-gallery-tag="Portrait" class="gallery-item" alt="Portrait1" loading="lazy" width="737" height="1105" src="./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash.webp">
 			<img data-gallery-tag="Mariages" class="gallery-item" alt="Mariage2" loading="lazy" width="1120" height="1680" src="./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash.webp">
@@ -142,7 +179,7 @@
 		<div class="form-container">
 			<h3>Une question ? Une demande de devis ?</h3>
 			<p> N’hésitez pas à m’écrire ! Je vous répondrai en moins de 24 heures</p>
-			<form action="" method="post">
+			<form action="index.html" method="post">
 				<label for="nom">Nom</label>
 				<input type="text" name="nom" id="nom">
 				<label for="email">Email</label>
@@ -157,5 +194,32 @@
 		</div>
 	</div>
 </section>
+<div class="contact-snippet" style="display: none;" itemscope @type="https://schema.org/Photograph">
+	<div itemscope itemsype="https://schema.org/Service">
+		<h5><span itemprop="name">Nina Carducci</span></h5>
+		<div itemscope itemtype="https://schema.org/LocalBusiness">
+			<span itemprop="name" style="display: none;">Nina Carducci</span><br>
+			<span itemprop="streetAddress">68 avenue Alsace-Lorraine</span><br>
+			<span itemprop="postalCode">33200</span>
+			<span itemprop="addressLocality">Bordeaux</span><br>
+			<span itemprop="addressCountry">France</span><br>
+			<span itemprop="telephone">05 56 67 78 89</span><br>
+			<span itemprop="priceRange" style="display: none;">50€-400€</span>
+		</div>
+	</div>
+	<div itemprop="OpeningHoursSpecification" itemscope itemtype="https://schema.org/OpeningHoursSpecification">
+		<div>
+			Jours d'ouverture :
+			<ul>
+				<li itemprop="dayOfWeek" content="Monday">Lundi</li>
+				<li itemprop="dayOfWeek" content="Tuesday">Mardi</li>
+				<li itemprop="dayOfWeek" content="Wednesday">Mercredi</li>
+				<li itemprop="dayOfWeek" content="Thursday">Jeudi</li>
+				<li itemprop="dayOfWeek" content="Friday">Vendredi</li>			
+			</ul>
+			De <span itemprop="opens">10:00</span> à <span itemprop="closes">19:00</span>
+		</div>
+	</div>
+</div>
 </body>
 </html>
